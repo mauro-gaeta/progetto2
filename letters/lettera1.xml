@@ -3,38 +3,21 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Lettera di Aldo Moro</title>
+                <title>Lettera a Destinatario 1</title>
             </titleStmt>
             <publicationStmt>
-                <p>Lettera storica</p>
+                <authority>Intorno all'affaire Moro</authority>
             </publicationStmt>
             <sourceDesc>
-                <p>Archivio privato</p>
+                <p>Fonte della lettera</p>
             </sourceDesc>
         </fileDesc>
     </teiHeader>
     <text>
         <body>
             <div type="letter">
-                <opener>
-                    <salute>Caro amico,</salute>
-                    <dateline>8 aprile 1978</dateline>
-                </opener>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
-                <closer>
-                    <signed>Aldo Moro</signed>
-                </closer>
+                <p>Contenuto della lettera...</p>
             </div>
         </body>
     </text>
-    <profileDesc>
-        <creation>
-            <date>1978-04-08</date>
-        </creation>
-        <particDesc>
-            <person>
-                <persName>Carlo Rossi</persName>
-            </person>
-        </particDesc>
-    </profileDesc>
 </TEI>
