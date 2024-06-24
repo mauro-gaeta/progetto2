@@ -3,25 +3,38 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Lettera di Aldo Moro a Giovanni Bianchi</title>
-                <author>Aldo Moro</author>
-                <respStmt>
-                    <resp>Destinatario</resp>
-                    <name>Giovanni Bianchi</name>
-                </respStmt>
+                <title>Corrispondenza di Aldo Moro</title>
             </titleStmt>
             <publicationStmt>
-                <publisher>Fonte della lettera di esempio.</publisher>
-                <date>1978-03-25</date>
+                <p>Lettera storica</p>
             </publicationStmt>
             <sourceDesc>
-                <p>Descrizione della fonte della lettera di esempio.</p>
+                <p>Archivio privato</p>
             </sourceDesc>
         </fileDesc>
     </teiHeader>
     <text>
         <body>
-            <p>Contenuto della lettera di esempio.</p>
+            <div type="letter">
+                <opener>
+                    <salute>Cara signora,</salute>
+                    <dateline>15 maggio 1978</dateline>
+                </opener>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae nisl non odio gravida aliquet. Nulla facilisi.</p>
+                <closer>
+                    <signed>Aldo Moro</signed>
+                </closer>
+            </div>
         </body>
     </text>
+    <profileDesc>
+        <creation>
+            <date>1978-05-15</date>
+        </creation>
+        <particDesc>
+            <person>
+                <persName>Luisa Bianchi</persName>
+            </person>
+        </particDesc>
+    </profileDesc>
 </TEI>
