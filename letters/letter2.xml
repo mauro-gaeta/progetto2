@@ -5,6 +5,10 @@
             <titleStmt>
                 <title>Lettera di Aldo Moro a Giovanni Bianchi</title>
                 <author>Aldo Moro</author>
+                <respStmt>
+                    <resp>Destinatario</resp>
+                    <name>Giovanni Bianchi</name>
+                </respStmt>
             </titleStmt>
             <publicationStmt>
                 <publisher>Fonte della lettera di esempio.</publisher>
