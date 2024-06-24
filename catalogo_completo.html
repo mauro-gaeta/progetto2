@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Intorno all'affaire Moro</h1>
+    <header style="background-color: #8b008b; color: white; padding: 10px;">
+        <h1 style="margin: 0;">Intorno all'affaire Moro</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Homepage</a></li>
@@ -37,7 +37,7 @@
                     </tr>
                 </thead>
                 <tbody id="letters-table-body">
-                    <!-- Le lettere saranno caricate qui -->
+                    <!-- Qui saranno caricati dinamicamente i dettagli delle lettere -->
                 </tbody>
             </table>
         </div>
@@ -45,11 +45,12 @@
     <footer>
         <p>Progetto creato da Claudia Canforini, per la prova d'esame di Digital Humanities e patrimonio culturale</p>
     </footer>
+    <script src="script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const lettersFolder = 'letters/';
             const lettersTableBody = document.getElementById('letters-table-body');
-            
+
             fetch(lettersFolder)
                 .then(response => response.text())
                 .then(data => {
@@ -57,26 +58,28 @@
                     const doc = parser.parseFromString(data, 'text/html');
                     const files = Array.from(doc.querySelectorAll('a')).map(a => a.href).filter(href => href.endsWith('.xml'));
 
-                    files.forEach((file, index) => {
+                    files.forEach(file => {
                         fetch(file)
                             .then(response => response.text())
                             .then(xmlData => {
                                 const parser = new DOMParser();
                                 const xmlDoc = parser.parseFromString(xmlData, 'application/xml');
 
-                                const title = xmlDoc.getElementsByTagName('title')[0].textContent;
-                                const date = xmlDoc.getElementsByTagName('date')[0].textContent;
-                                const destinatario = xmlDoc.getElementsByTagName('name')[0].textContent;
+                                const letteraN = xmlDoc.querySelector('title').textContent;
+                                const descrizione = xmlDoc.querySelector('descrizione').textContent;
+                                const data = xmlDoc.querySelector('data').textContent;
+                                const destinatario = xmlDoc.querySelector('destinatario').textContent;
 
-                                const row = document.createElement('tr');
-                                row.innerHTML = `
-                                    <td>${index + 1}</td>
-                                    <td>${title}</td>
-                                    <td>${date}</td>
-                                    <td>${destinatario}</td>
-                                    <td><a href="letter.html?file=${file}">Dettagli</a></td>
+                                const row = `
+                                    <tr>
+                                        <td>${letteraN}</td>
+                                        <td>${descrizione}</td>
+                                        <td>${data}</td>
+                                        <td>${destinatario}</td>
+                                        <td><a href="dettaglio_lettera.html?file=${encodeURIComponent(file)}">Dettagli</a></td>
+                                    </tr>
                                 `;
-                                lettersTableBody.appendChild(row);
+                                lettersTableBody.innerHTML += row;
                             })
                             .catch(error => console.error('Errore nel caricamento del file XML:', error));
                     });
