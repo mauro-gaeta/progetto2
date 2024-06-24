@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogazione Documenti</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Catalogazione Documenti</h1>
+    </header>
+    <main>
+        <section id="catalog">
+            <h2>Lettere</h2>
+            <!-- Qui verranno visualizzate le lettere -->
+            <div id="letter-container"></div>
+        </section>
+    </main>
+    <script>
+        // Carica e visualizza i dati XML
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('document.xml')
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const xml = parser.parseFromString(data, "application/xml");
+                    const letters = xml.getElementsByTagName('letter');
+
+                    const container = document.getElementById('letter-container');
+                    for (let letter of letters) {
+                        const title = letter.getElementsByTagName('dc:title')[0].textContent;
+                        const author = letter.getElementsByTagName('dc:creator')[0].textContent;
+                        const date = letter.getElementsByTagName('dc:date')[0].textContent;
+                        const content = letter.getElementsByTagName('tei:content')[0].textContent;
+
+                        const letterDiv = document.createElement('div');
+                        letterDiv.classList.add('letter');
+                        letterDiv.innerHTML = `
+                            <h3>${title}</h3>
+                            <p><strong>Autore:</strong> ${author}</p>
+                            <p><strong>Data:</strong> ${date}</p>
+                            <p>${content}</p>
+                        `;
+                        container.appendChild(letterDiv);
+                    }
+                })
+                .catch(error => console.error('Errore nel caricamento del file XML:', error));
+        });
+    </script>
+</body>
+</html>
