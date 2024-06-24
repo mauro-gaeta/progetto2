@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intorno all'affaire Moro</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Includere il CSS di Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
     <header style="background-color: #8b008b; color: white; padding: 10px;">
@@ -16,7 +18,7 @@
                     <a href="#">Catalogo</a>
                     <ul>
                         <li><a href="catalogo_completo.html">Catalogo completo</a></li>
-                        <li><a href="catalogo_destinatario.html">Catalogo per destinatario</a></li>
+                        <li><a href="catalogo_per_destinatario.html">Catalogo per destinatario</a></li>
                     </ul>
                 </li>
                 <li><a href="storia.html">La storia</a></li>
@@ -25,33 +27,33 @@
     </header>
     <main>
         <div class="container">
-            <h2>Benvenuti su Intorno all'affaire Moro</h2>
-            <div class="carousel">
-                <div class="slide">
-                    <img src="https://www.repstatic.it/content/localirep/img/rep/2018/04/12/154512101-f7e8bb2a-b8a7-40e7-b068-60f890a243e7.jpg" alt="Slide 1">
-                    <a href="pagina_esempio.html" class="btn">Vai alla pagina di esempio</a>
-                </div>
-                <div class="slide">
-                    <img src="https://www.avvenire.it/c/2017/PublishingImages/2d5addcfed194eca8cf92e9f2f8dd992/moro.jpg" alt="Slide 2">
-                    <a href="pagina_esempio.html" class="btn">Vai alla pagina di esempio</a>
-                </div>
-                <div class="slide">
-                    <img src="https://www.raicultura.it/webdoc/aldo-moro/gallery/11.jpg" alt="Slide 3">
-                    <a href="pagina_esempio.html" class="btn">Vai alla pagina di esempio</a>
-                </div>
-                <div class="slide">
-                    <img src="https://www.raicultura.it/webdoc/aldo-moro/gallery/16.jpg" alt="Slide 4">
-                    <a href="pagina_esempio.html" class="btn">Vai alla pagina di esempio</a>
+            <h2>Carosello di Immagini</h2>
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://www.repstatic.it/content/localirep/img/rep/2018/04/12/154512101-f7e8bb2a-b8a7-40e7-b068-60f890a243e7.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://www.avvenire.it/c/2017/PublishingImages/2d5addcfed194eca8cf92e9f2f8dd992/moro.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://www.raicultura.it/webdoc/aldo-moro/gallery/11.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://www.raicultura.it/webdoc/aldo-moro/gallery/16.jpg" class="d-block w-100" alt="...">
+                    </div>
                 </div>
             </div>
-            <p class="project-description">
-                Il presente progetto ha il fine di catalogare e rendere fruibili le lettere inviate da Aldo Moro durante la sua prigionia di 55 giorni, presso il covo delle Brigate Rosse, in Via Monte Nevoso 8, Roma.
-            </p>
+            <p style="margin-top: 20px;">Il presente progetto ha il fine di catalogare e rendere fruibili le lettere inviate da Aldo Moro durante la sua prigionia di 55 giorni, presso il covo delle Brigate Rosse, in Via Monte Nevoso 8, Roma.</p>
         </div>
     </main>
     <footer>
         <p>Progetto creato da Claudia Canforini, per la prova d'esame di Digital Humanities e patrimonio culturale</p>
     </footer>
-    <script src="script.js"></script>
+
+    <!-- Includere jQuery e Bootstrap JS prima della chiusura del tag body -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
