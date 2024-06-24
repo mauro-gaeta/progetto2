@@ -4,54 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalogo Completo - Intorno all'affaire Moro</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="catalogo.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="content">
-        <header>
-            <div class="container">
-                <h1>Intorno all'affaire Moro</h1>
-                <nav>
+    <header>
+        <h1>Intorno all'affaire Moro</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Homepage</a></li>
+                <li>
+                    <a href="#">Catalogo</a>
                     <ul>
-                        <li><a href="index.html">Homepage</a></li>
-                        <li><a href="#">Catalogo</a>
-                            <ul>
-                                <li><a href="catalogocompleto.html">Catalogo completo</a></li>
-                                <li><a href="#">Catalogo per destinatario</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">La storia</a></li>
+                        <li><a href="catalogo_completo.html">Catalogo completo</a></li>
+                        <li><a href="catalogo_destinatario.html">Catalogo per destinatario</a></li>
                     </ul>
-                </nav>
-            </div>
-        </header>
-        <main>
-            <section id="letter-list">
-                <div class="container">
-                    <h2>Catalogo completo delle lettere</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Lettera n.</th>
-                                <th>Descrizione</th>
-                                <th>Data</th>
-                                <th>Destinatario</th>
-                                <th>Dettagli</th>
-                            </tr>
-                        </thead>
-                        <tbody id="letter-table-body">
-                            <!-- Le righe saranno aggiunte dinamicamente qui -->
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-        </main>
-    </div>
-    <footer>
+                </li>
+                <li><a href="storia.html">La storia</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
         <div class="container">
-            <p>Progetto creato da Claudia Canforini, per la prova d'esame di Digital Humanities e patrimonio culturale</p>
+            <h2>Catalogo Completo</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Lettera n.</th>
+                        <th>Descrizione</th>
+                        <th>Data</th>
+                        <th>Destinatario</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody id="letters-table-body">
+                    <!-- Le lettere saranno caricate qui -->
+                </tbody>
+            </table>
         </div>
+    </main>
+    <footer>
+        <p>Progetto creato da Claudia Canforini, per la prova d'esame di Digital Humanities e patrimonio culturale</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const lettersFolder = 'letters/';
+            const lettersTableBody = document.getElementById('letters-table-body');
+            
+            fetch(lettersFolder)
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, 'text/html');
+                    const files = Array.from(doc.querySelectorAll('a')).map(a => a.href).filter(href => href.endsWith('.xml'));
+
+                    files.forEach((file, index) => {
+                        fetch(file)
+                            .then(response => response.text())
+                            .then(xmlData => {
+                                const parser = new DOMParser();
+                                const xmlDoc = parser.parseFromString(xmlData, 'application/xml');
+
+                                const title = xmlDoc.getElementsByTagName('title')[0].textContent;
+                                const date = xmlDoc.getElementsByTagName('date')[0].textContent;
+                                const destinatario = xmlDoc.getElementsByTagName('name')[0].textContent;
+
+                                const row = document.createElement('tr');
+                                row.innerHTML = `
+                                    <td>${index + 1}</td>
+                                    <td>${title}</td>
+                                    <td>${date}</td>
+                                    <td>${destinatario}</td>
+                                    <td><a href="letter.html?file=${file}">Dettagli</a></td>
+                                `;
+                                lettersTableBody.appendChild(row);
+                            })
+                            .catch(error => console.error('Errore nel caricamento del file XML:', error));
+                    });
+                })
+                .catch(error => console.error('Errore nel caricamento dei file:', error));
+        });
+    </script>
 </body>
 </html>
