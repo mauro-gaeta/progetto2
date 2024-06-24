@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Caricamento dinamico del carosello di immagini sulla homepage
     const carouselImages = [
-        "images/1.jpg",
-        "images/2.jpg",
-        "images/3.jpg",
-        "images/4.jpg"
+"https://www.repstatic.it/content/localirep/img/rep/2018/04/12/154512101-f7e8bb2a-b8a7-40e7-b068-60f890a243e7.jpg",
+"https://www.avvenire.it/c/2017/PublishingImages/2d5addcfed194eca8cf92e9f2f8dd992/moro.jpg",
+"https://www.raicultura.it/webdoc/aldo-moro/gallery/11.jpg",
+"https://www.raicultura.it/webdoc/aldo-moro/gallery/16.jpg"
     ];
 
     const carouselContainer = document.getElementById('carousel');
