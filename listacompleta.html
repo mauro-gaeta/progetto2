@@ -41,7 +41,8 @@
                     date: "1978-03-16",
                     content: "Caro Mario, Spero che tu stia bene. Ti scrivo per condividere con te alcune riflessioni sulla situazione attuale.",
                     image: "immagine1.jpg",
-                    file: "files/letter1.pdf"
+                    file: "files/letter1.pdf",
+                    metadataPage: "letter1.html" // Link alla pagina dei metadati
                 },
                 {
                     title: "Lettera di Laura Verdi a Paolo Rossi",
@@ -49,7 +50,8 @@
                     date: "1980-07-21",
                     content: "Caro Paolo, Spero che questa lettera ti trovi bene. Vorrei condividere con te alcune novità sulla nostra famiglia.",
                     image: "immagine2.jpg",
-                    file: "files/letter2.pdf"
+                    file: "files/letter2.pdf",
+                    metadataPage: "letter2.html" // Link alla pagina dei metadati
                 }
             ];
 
@@ -64,6 +66,7 @@
                     <p>${letter.content}</p>
                     <img src="${letter.image}" alt="${letter.title}" class="letter-image">
                     <a href="${letter.file}" download class="download-button">Scarica il file</a>
+                    <a href="${letter.metadataPage}" class="metadata-button">Vedi metadati completi</a>
                 `;
                 container.appendChild(letterDiv);
             });
