@@ -15,4 +15,13 @@
                 <date>1978-04-30</date>
             </publicationStmt>
             <sourceDesc>
-                <p>Descrizione della fonte della lettera di esempio.</p
+                <p>Descrizione della fonte della lettera di esempio.</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <p>Contenuto della lettera di esempio.</p>
+        </body>
+    </text>
+</TEI>
