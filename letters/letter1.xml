@@ -1,16 +1,25 @@
-<catalog xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:tei="http://www.tei-c.org/ns/1.0">
-    <letter>
-        <dc:title>Lettera di Giovanni Rossi a Mario Bianchi</dc:title>
-        <dc:creator>Giovanni Rossi</dc:creator>
-        <dc:date>1978-03-16</dc:date>
-        <tei:content>
-            <![CDATA[
-                Caro Mario,
-                Spero che tu stia bene. Ti scrivo per condividere con te alcune riflessioni sulla situazione attuale.
-                [...]
-            ]]>
-        </tei:content>
-        <dc:image>https://it.wikisource.org/wiki/Le_lettere_di_Aldo_Moro_dalla_prigionia_alla_storia#/media/File:Moro_-_Le_lettere_di_Aldo_Moro_dalla_prigionia_alla_storia,_Mura,_Roma_2013_(page_1_crop).jpg</dc:image>
-        <dc:file>letters/letter1.xml</dc:file>
-    </letter>
-</catalog>
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Lettera di Aldo Moro a Luigi Rossi</title>
+                <author>Aldo Moro</author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Fonte della lettera di esempio</publisher>
+                <date>20 marzo 1978</date>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Lettera di Aldo Moro a Luigi Rossi</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="letter">
+                <p>Contenuto della lettera di esempio.</p>
+            </div>
+        </body>
+    </text>
+</TEI>
