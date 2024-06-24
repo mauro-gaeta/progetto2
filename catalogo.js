@@ -5,6 +5,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const letterFiles = [
         'letters/letter1.xml',
         'letters/letter2.xml',
+        'letters/letter3.xml',
+        'letters/letter4.xml',
+        'letters/letter5.xml',
+        'letters/letter6.xml',
+        'letters/letter7.xml',
+        'letters/letter8.xml',
+        'letters/letter9.xml',
+        'letters/letter10.xml',
         // Aggiungi altri file XML qui
     ];
 
