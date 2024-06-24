@@ -10,7 +10,7 @@
                 [...]
             ]]>
         </tei:content>
-        <dc:image>immagine2.jpg</dc:image>
-        <dc:file>file2.pdf</dc:file>
+        <dc:image>https://it.wikisource.org/wiki/Le_lettere_di_Aldo_Moro_dalla_prigionia_alla_storia#/media/File:Moro_-_Le_lettere_di_Aldo_Moro_dalla_prigionia_alla_storia,_Mura,_Roma_2013_(page_1_crop).jpg</dc:image>
+        <dc:file>letters/letter2.xml</dc:file>
     </letter>
 </catalog>
