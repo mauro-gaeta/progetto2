@@ -1,16 +1,13 @@
-<catalog xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:tei="http://www.tei-c.org/ns/1.0">
-    <letter>
-        <dc:title>Lettera di Laura Verdi a Paolo Rossi</dc:title>
-        <dc:creator>Laura Verdi</dc:creator>
-        <dc:date>1980-07-21</dc:date>
-        <tei:content>
-            <![CDATA[
-                Caro Paolo,
-                Spero che questa lettera ti trovi bene. Vorrei condividere con te alcune novità sulla nostra famiglia.
-                [...]
-            ]]>
-        </tei:content>
-        <dc:image>https://it.wikisource.org/wiki/Le_lettere_di_Aldo_Moro_dalla_prigionia_alla_storia#/media/File:Moro_-_Le_lettere_di_Aldo_Moro_dalla_prigionia_alla_storia,_Mura,_Roma_2013_(page_1_crop).jpg</dc:image>
-        <dc:file>letters/letter2.xml</dc:file>
-    </letter>
-</catalog>
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://purl.org/dc/elements/1.1/">
+    <title>Lettera di Aldo Moro a Giovanni Bianchi</title>
+    <creator>Aldo Moro</creator>
+    <date>25 marzo 1978</date>
+    <subject>Lettera di Aldo Moro a Giovanni Bianchi</subject>
+    <description>Contenuto della lettera di esempio.</description>
+    <publisher>Fonte della lettera di esempio</publisher>
+    <format>text/xml</format>
+    <type>Text</type>
+    <identifier>lettera2.xml</identifier>
+    <source>Fonte della lettera di esempio</source>
+</metadata>
