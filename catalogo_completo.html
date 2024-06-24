@@ -47,45 +47,63 @@
     </footer>
     <script src="script.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const lettersFolder = 'letters/';
-            const lettersTableBody = document.getElementById('letters-table-body');
+       document.addEventListener("DOMContentLoaded", function() {
+    const letterTableBody = document.getElementById('letter-table-body');
 
-            fetch(lettersFolder)
-                .then(response => response.text())
-                .then(data => {
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(data, 'text/html');
-                    const files = Array.from(doc.querySelectorAll('a')).map(a => a.href).filter(href => href.endsWith('.xml'));
+    // Array dei file XML delle lettere (puoi aggiungere altri file XML qui)
+    const letterFiles = [
+        'letters/lettera1.xml',
+        'letters/lettera2.xml',
+        'letters/lettera3.xml',
+        'letters/lettera4.xml',
+        'letters/lettera5.xml',
+        'letters/lettera6.xml',
+        'letters/lettera7.xml',
+        'letters/lettera8.xml',
+        'letters/lettera9.xml',
+        'letters/lettera10.xml',
+        // Aggiungi altri file XML qui
+    ];
 
-                    files.forEach(file => {
-                        fetch(file)
-                            .then(response => response.text())
-                            .then(xmlData => {
-                                const parser = new DOMParser();
-                                const xmlDoc = parser.parseFromString(xmlData, 'application/xml');
+    letterFiles.forEach((file, index) => {
+        fetch(file)
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(data, "text/xml");
+                
+                let title, date, recipient, description;
 
-                                const letteraN = xmlDoc.querySelector('title').textContent;
-                                const descrizione = xmlDoc.querySelector('descrizione').textContent;
-                                const data = xmlDoc.querySelector('data').textContent;
-                                const destinatario = xmlDoc.querySelector('destinatario').textContent;
+                if (xmlDoc.documentElement.nodeName === "dublin_core") {
+                    title = xmlDoc.getElementsByTagName("title")[0].textContent;
+                    date = xmlDoc.getElementsByTagName("date")[0].textContent;
+                    recipient = xmlDoc.getElementsByTagName("creator")[0].textContent;
+                    description = `Lettera di Aldo Moro a ${recipient}`;
+                } else if (xmlDoc.documentElement.nodeName === "TEI") {
+                    title = xmlDoc.getElementsByTagName("title")[0].textContent;
+                    date = xmlDoc.getElementsByTagName("date")[0].textContent;
+                    recipient = xmlDoc.getElementsByTagName("author")[0].textContent;
+                    description = `Lettera di Aldo Moro a ${recipient}`;
+                }
 
-                                const row = `
-                                    <tr>
-                                        <td>${letteraN}</td>
-                                        <td>${descrizione}</td>
-                                        <td>${data}</td>
-                                        <td>${destinatario}</td>
-                                        <td><a href="dettaglio_lettera.html?file=${encodeURIComponent(file)}">Dettagli</a></td>
-                                    </tr>
-                                `;
-                                lettersTableBody.innerHTML += row;
-                            })
-                            .catch(error => console.error('Errore nel caricamento del file XML:', error));
-                    });
-                })
-                .catch(error => console.error('Errore nel caricamento dei file:', error));
-        });
+                const row = document.createElement("tr");
+
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${description}</td>
+                    <td>${date}</td>
+                    <td>${recipient}</td>
+                    <td><a href="lettera${index + 1}.html">Dettagli</a></td>
+                `;
+
+                letterTableBody.appendChild(row);
+            })
+            .catch(error => {
+                console.error('Errore nel caricamento del file XML:', error);
+            });
+    });
+});
+
     </script>
 </body>
 </html>
