@@ -30,54 +30,40 @@
         </section>
     </main>
     <script>
-        // Dati XML come stringa
-        const xmlData = `
-        <catalog xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:tei="http://www.tei-c.org/ns/1.0">
-            <letter>
-                <dc:title>Titolo della Lettera 1</dc:title>
-                <dc:creator>Autore 1</dc:creator>
-                <dc:date>2023-06-01</dc:date>
-                <tei:content>Questo è il contenuto della lettera 1.</tei:content>
-                <dc:image>immagine1.jpg</dc:image>
-                <dc:file>file1.pdf</dc:file>
-            </letter>
-            <letter>
-                <dc:title>Titolo della Lettera 2</dc:title>
-                <dc:creator>Autore 2</dc:creator>
-                <dc:date>2024-01-15</dc:date>
-                <tei:content>Questo è il contenuto della lettera 2.</tei:content>
-                <dc:image>immagine2.jpg</dc:image>
-                <dc:file>file2.pdf</dc:file>
-            </letter>
-        </catalog>
-        `;
-
         document.addEventListener("DOMContentLoaded", function() {
-            const parser = new DOMParser();
-            const xml = parser.parseFromString(xmlData, "application/xml");
-            const letters = xml.getElementsByTagName('letter');
-
             const container = document.getElementById('letter-container');
-            for (let letter of letters) {
-                const title = letter.getElementsByTagName('dc:title')[0].textContent;
-                const author = letter.getElementsByTagName('dc:creator')[0].textContent;
-                const date = letter.getElementsByTagName('dc:date')[0].textContent;
-                const content = letter.getElementsByTagName('tei:content')[0].textContent;
-                const image = letter.getElementsByTagName('dc:image')[0].textContent;
-                const file = letter.getElementsByTagName('dc:file')[0].textContent;
 
-                const letterDiv = document.createElement('div');
-                letterDiv.classList.add('letter');
-                letterDiv.innerHTML = `
-                    <h3>${title}</h3>
-                    <p><strong>Autore:</strong> ${author}</p>
-                    <p><strong>Data:</strong> ${date}</p>
-                    <p>${content}</p>
-                    <img src="${image}" alt="${title}" class="letter-image">
-                    <a href="${file}" download class="download-button">Scarica il file</a>
-                `;
-                container.appendChild(letterDiv);
-            }
+            // Carica dinamicamente i file XML dalla cartella "letters"
+            const letterFiles = ['letters/letter1.xml', 'letters/letter2.xml']; // Lista dei file XML
+
+            letterFiles.forEach(file => {
+                fetch(file)
+                    .then(response => response.text())
+                    .then(data => {
+                        const parser = new DOMParser();
+                        const xml = parser.parseFromString(data, "application/xml");
+
+                        const title = xml.getElementsByTagName('dc:title')[0].textContent;
+                        const author = xml.getElementsByTagName('dc:creator')[0].textContent;
+                        const date = xml.getElementsByTagName('dc:date')[0].textContent;
+                        const content = xml.getElementsByTagName('tei:content')[0].textContent;
+                        const image = xml.getElementsByTagName('dc:image')[0].textContent;
+                        const file = xml.getElementsByTagName('dc:file')[0].textContent;
+
+                        const letterDiv = document.createElement('div');
+                        letterDiv.classList.add('letter');
+                        letterDiv.innerHTML = `
+                            <h3>${title}</h3>
+                            <p><strong>Autore:</strong> ${author}</p>
+                            <p><strong>Data:</strong> ${date}</p>
+                            <p>${content}</p>
+                            <img src="${image}" alt="${title}" class="letter-image">
+                            <a href="${file}" download class="download-button">Scarica il file</a>
+                        `;
+                        container.appendChild(letterDiv);
+                    })
+                    .catch(error => console.error('Errore nel caricamento del file XML:', error));
+            });
         });
     </script>
 </body>
