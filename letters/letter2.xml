@@ -1,9 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <catalog xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:tei="http://www.tei-c.org/ns/1.0">
     <letter>
-        <dc:title>Titolo della Lettera 2</dc:title>
-        <dc:creator>Autore 2</dc:creator>
-        <dc:date>2024-01-15</dc:date>
-        <tei:content>Questo è il contenuto della lettera 2.</tei:content>
+        <dc:title>Lettera di Laura Verdi a Paolo Rossi</dc:title>
+        <dc:creator>Laura Verdi</dc:creator>
+        <dc:date>1980-07-21</dc:date>
+        <tei:content>
+            <![CDATA[
+                Caro Paolo,
+                Spero che questa lettera ti trovi bene. Vorrei condividere con te alcune novità sulla nostra famiglia.
+                [...]
+            ]]>
+        </tei:content>
+        <dc:image>immagine2.jpg</dc:image>
+        <dc:file>file2.pdf</dc:file>
     </letter>
 </catalog>
