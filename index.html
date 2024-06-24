@@ -7,47 +7,51 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Intorno all'affaire Moro</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Homepage</a></li>
-                    <li><a href="#">Catalogo</a>
-                        <ul>
-                            <li><a href="catalogocompleto.html">Catalogo completo</a></li>
-                            <li><a href="#">Catalogo per destinatario</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">La storia</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header style="background-color: #8b008b; color: white; padding: 10px;">
+        <h1 style="margin: 0;">Intorno all'affaire Moro</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Homepage</a></li>
+                <li>
+                    <a href="#">Catalogo</a>
+                    <ul>
+                        <li><a href="catalogo_completo.html">Catalogo completo</a></li>
+                        <li><a href="catalogo_destinatario.html">Catalogo per destinatario</a></li>
+                    </ul>
+                </li>
+                <li><a href="storia.html">La storia</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <section id="carousel">
-            <div class="container">
-                <div class="carousel-slide">
-                    <img src="https://www.repstatic.it/content/localirep/img/rep/2018/04/12/154512101-f7e8bb2a-b8a7-40e7-b068-60f890a243e7.jpg" alt="Aldo Moro" class="carousel-image">
-                    <div class="carousel-caption">
-                        <h2>Testo dell'immagine</h2>
-                        <p><a href="paginaesempio.html" class="button">Vai alla pagina di esempio</a></p>
-                    </div>
+        <div class="container">
+            <h2>Benvenuti su Intorno all'affaire Moro</h2>
+            <div class="carousel">
+                <div class="slide">
+                    <img src="https://www.repstatic.it/content/localirep/img/rep/2018/04/12/154512101-f7e8bb2a-b8a7-40e7-b068-60f890a243e7.jpg" alt="Slide 1">
+                    <a href="pagina_esempio.html" class="btn">Vai alla pagina di esempio</a>
                 </div>
-                <!-- Altre immagini del carosello -->
-                <!-- Inserire le restanti immagini come nel carosello -->
+                <div class="slide">
+                    <img src="https://www.avvenire.it/c/2017/PublishingImages/2d5addcfed194eca8cf92e9f2f8dd992/moro.jpg" alt="Slide 2">
+                    <a href="pagina_esempio.html" class="btn">Vai alla pagina di esempio</a>
+                </div>
+                <div class="slide">
+                    <img src="https://www.raicultura.it/webdoc/aldo-moro/gallery/11.jpg" alt="Slide 3">
+                    <a href="pagina_esempio.html" class="btn">Vai alla pagina di esempio</a>
+                </div>
+                <div class="slide">
+                    <img src="https://www.raicultura.it/webdoc/aldo-moro/gallery/16.jpg" alt="Slide 4">
+                    <a href="pagina_esempio.html" class="btn">Vai alla pagina di esempio</a>
+                </div>
             </div>
-        </section>
-        <section id="project-description">
-            <div class="container">
-                <p>Il presente progetto ha il fine di catalogare e rendere fruibili le lettere inviate da Aldo Moro durante la sua prigionia di 55 giorni, presso il covo delle Brigate Rosse, in Via Monte Nevoso 8, Roma.</p>
-            </div>
-        </section>
+            <p class="project-description">
+                Il presente progetto ha il fine di catalogare e rendere fruibili le lettere inviate da Aldo Moro durante la sua prigionia di 55 giorni, presso il covo delle Brigate Rosse, in Via Monte Nevoso 8, Roma.
+            </p>
+        </div>
     </main>
     <footer>
-        <div class="container">
-            <p>Progetto creato da Claudia Canforini, per la prova d'esame di Digital Humanities e patrimonio culturale</p>
-        </div>
+        <p>Progetto creato da Claudia Canforini, per la prova d'esame di Digital Humanities e patrimonio culturale</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
