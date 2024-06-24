@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<metadata xmlns="http://purl.org/dc/elements/1.1/">
-    <title>Lettera di Aldo Moro a Giovanni Bianchi</title>
-    <creator>Aldo Moro</creator>
-    <date>25 marzo 1978</date>
-    <subject>Lettera di Aldo Moro a Giovanni Bianchi</subject>
-    <description>Contenuto della lettera di esempio.</description>
-    <publisher>Fonte della lettera di esempio</publisher>
-    <format>text/xml</format>
-    <type>Text</type>
-    <identifier>lettera2.xml</identifier>
-    <source>Fonte della lettera di esempio</source>
-</metadata>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Lettera di Aldo Moro a Giovanni Bianchi</title>
+                <author>Aldo Moro</author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Fonte della lettera di esempio.</publisher>
+                <date>1978-03-25</date>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Descrizione della fonte della lettera di esempio.</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <p>Contenuto della lettera di esempio.</p>
+        </body>
+    </text>
+</TEI>
