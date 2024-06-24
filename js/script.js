@@ -31,4 +31,48 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Aggiungi il resto del tuo codice qui...
+    
+    // Caricamento dinamico delle lettere nel catalogo completo
+    const catalogoContainer = document.getElementById('lettere');
+
+    // Simulazione di 10 lettere
+    for (let i = 1; i <= 10; i++) {
+        const lettera = {
+            titolo: `Lettera a Destinatario ${i}`,
+            autore: "Aldo Moro",
+            destinatario: `Destinatario ${i}`,
+            data: `1978-04-${i}`,
+            testo: "Contenuto della lettera...",
+            immagine: `images/lettera${i}.jpg`,
+            fonte: "Fonte della lettera"
+        };
+
+        const letteraHTML = `
+            <div class="lettera">
+                <h2>${lettera.titolo}</h2>
+                <ul>
+                    <li><strong>Autore:</strong> ${lettera.autore}</li>
+                    <li><strong>Destinatario:</strong> ${lettera.destinatario}</li>
+                    <li><strong>Data:</strong> ${lettera.data}</li>
+                    <li><strong>Fonte:</strong> ${lettera.fonte}</li>
+                </ul>
+                <p>${lettera.testo}</p>
+                <img src="${lettera.immagine}" alt="Immagine della lettera">
+                <a href="#">Dettagli</a>
+            </div>
+        `;
+
+        catalogoContainer.innerHTML += letteraHTML;
+    }
+
+    // Caricamento dinamico dei destinatari nel catalogo per destinatario
+    const destinatariContainer = document.getElementById('destinatari');
+
+    // Esempio di destinatari
+    const destinatari = ["Destinatario 1", "Destinatario 2", "Destinatario 3", "Destinatario 4", "Destinatario 5"];
+
+    destinatari.forEach(destinatario => {
+        const destinatarioHTML = `<div><a href="#">${destinatario}</a></div>`;
+        destinatariContainer.innerHTML += destinatarioHTML;
+    });
 });
