@@ -1,56 +1,37 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const letterTableBody = document.getElementById('letter-table-body');
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogo completo - Intorno all'affaire Moro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Homepage</a></li>
+                <li>
+                    Catalogo
+                    <ul>
+                        <li><a href="catalogo.html">Catalogo completo</a></li>
+                        <li><a href="catalogo_per_destinatario.html">Catalogo per destinatario</a></li>
+                    </ul>
+                </li>
+                <li><a href="storia.html">La storia</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    // Array dei file XML delle lettere (puoi aggiungere altri file XML qui)
-    const letterFiles = [
-        'letters/letter1.xml',
-        'letters/letter2.xml',
-        'letters/letter3.xml',
-        'letters/letter4.xml',
-        'letters/letter5.xml',
-        'letters/letter6.xml',
-        'letters/letter7.xml',
-        'letters/letter8.xml',
-        'letters/letter9.xml',
-        'letters/letter10.xml',
-        // Aggiungi altri file XML qui
-    ];
+    <main>
+        <section id="lettere">
+            <!-- Qui va generato dinamicamente l'elenco delle lettere -->
+        </section>
+    </main>
 
-    letterFiles.forEach((file, index) => {
-        fetch(file)
-            .then(response => response.text())
-            .then(data => {
-                const parser = new DOMParser();
-                const xmlDoc = parser.parseFromString(data, "text/xml");
-                
-                let title, date, recipient, description;
-
-                if (xmlDoc.documentElement.nodeName === "dublin_core") {
-                    title = xmlDoc.getElementsByTagName("title")[0].textContent;
-                    date = xmlDoc.getElementsByTagName("date")[0].textContent;
-                    recipient = xmlDoc.getElementsByTagName("creator")[0].textContent;
-                    description = `Lettera di Aldo Moro a ${recipient}`;
-                } else if (xmlDoc.documentElement.nodeName === "TEI") {
-                    title = xmlDoc.getElementsByTagName("title")[0].textContent;
-                    date = xmlDoc.getElementsByTagName("date")[0].textContent;
-                    recipient = xmlDoc.getElementsByTagName("author")[0].textContent;
-                    description = `Lettera di Aldo Moro a ${recipient}`;
-                }
-
-                const row = document.createElement("tr");
-
-                row.innerHTML = `
-                    <td>${index + 1}</td>
-                    <td>${description}</td>
-                    <td>${date}</td>
-                    <td>${recipient}</td>
-                    <td><a href="lettera${index + 1}.html">Dettagli</a></td>
-                `;
-
-                letterTableBody.appendChild(row);
-            })
-            .catch(error => {
-                console.error('Errore nel caricamento del file XML:', error);
-            });
-    });
-});
+    <footer>
+        <p>Progetto creato da Claudia Canforini, per la prova d'esame di Digital Humanities e patrimonio culturale</p>
+    </footer>
+</body>
+</html>
