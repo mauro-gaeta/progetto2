@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dettagli Lettera - Intorno all'affaire Moro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Intorno all'affaire Moro</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Homepage</a></li>
+                <li>
+                    <a href="#">Catalogo</a>
+                    <ul>
+                        <li><a href="catalogo_completo.html">Catalogo completo</a></li>
+                        <li><a href="catalogo_destinatario.html">Catalogo per destinatario</a></li>
+                    </ul>
+                </li>
+                <li><a href="storia.html">La storia</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Dettagli Lettera</h2>
+            <aside>
+                <h3>Azioni</h3>
+                <ul>
+                    <li><a href="#" id="share-link">Condividi</a></li>
+                    <li><a href="#" id="download-link">Scarica XML</a></li>
+                </ul>
+            </aside>
+            <div id="letter-details">
+                <!-- I dettagli della lettera saranno caricati qui -->
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Progetto creato da Claudia Canforini, per la prova d'esame di Digital Humanities e patrimonio culturale</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const params = new URLSearchParams(window.location.search);
+            const file = params.get('file');
+            const letterDetails = document.getElementById('letter-details');
+            const downloadLink = document.getElementById('download-link');
+            const shareLink = document.getElementById('share-link');
+
+            if (file) {
+                fetch(file)
+                    .then(response => response.text())
+                    .then(xmlData => {
+                        const parser = new DOMParser();
+                        const xmlDoc = parser.parseFromString(xmlData, 'application/xml');
+
+                        const title = xmlDoc.getElementsByTagName('title')[0].textContent;
+                        const author = xmlDoc.getElementsByTagName('author')[0].textContent;
+                        const destinatario = xmlDoc.getElementsByTagName('name')[0].textContent;
+                        const date = xmlDoc.getElementsByTagName('date')[0].textContent;
+                        const text = xmlDoc.getElementsByTagName('p')[0].textContent;
+
+                        const detailsHtml = `
+                            <p><strong>Titolo:</strong> ${title}</p>
+                            <p><strong>Autore:</strong> ${author}</p>
+                            <p><strong>Destinatario:</strong> ${destinatario}</p>
+                            <p><strong>Data:</strong> ${date}</p>
+                            <p><strong>Testo:</strong> ${text}</p>
+                        `;
+
+                        letterDetails.innerHTML = detailsHtml;
+                        downloadLink.href = file;
+                        shareLink.href = `mailto:?subject=Dettagli Lettera&body=${encodeURIComponent(detailsHtml)}`;
+                    })
+                    .catch(error => console.error('Errore nel caricamento del file XML:', error));
+            }
+        });
+    </script>
+</body>
+</html>
