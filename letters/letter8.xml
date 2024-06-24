@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Lettera di Aldo Moro a Laura Rossi</title>
+                <author>Aldo Moro</author>
+                <respStmt>
+                    <resp>Destinatario</resp>
+                    <name>Laura Rossi</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Fonte della lettera di esempio.</publisher>
+                <date>1978-04-25</date>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Descrizione della fonte della lettera di esempio.</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <p>Contenuto della lettera di esempio.</p>
+        </body>
+    </text>
+</TEI>
