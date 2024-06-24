@@ -1,7 +1,7 @@
 <catalog xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:tei="http://www.tei-c.org/ns/1.0">
     <letter>
         <dc:title>Lettera di Giovanni Rossi a Mario Bianchi</dc:title>
-        <dc:author>Giovanni Rossi</dc:author>
+        <dc:creator>Giovanni Rossi</dc:creator>
         <dc:date>1978-03-16</dc:date>
         <tei:content>
             <![CDATA[
