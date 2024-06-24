@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalogazione Documenti</title>
+    <title>Intorno all'affaire Moro</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- CSS personalizzato -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Catalogazione Documenti</h1>
+    <header style="background-color: #800080; color: #fff;">
+        <h1>Intorno all'affaire Moro</h1>
         <nav>
             <ul class="menu">
                 <li><a href="index.html">Home page</a></li>
@@ -23,36 +26,36 @@
             </ul>
         </nav>
     </header>
+
     <main>
-        <section id="home">
-            <div class="box-container">
-                <div class="box">
-                    <a href="index.html">
-                        <h3>Home page</h3>
-                    </a>
+        <section id="carouselSection">
+            <div id="carouselImages" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <a href="link1.html"><img src="image1.jpg" class="d-block w-100" alt="Immagine 1"></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="link2.html"><img src="image2.jpg" class="d-block w-100" alt="Immagine 2"></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="link3.html"><img src="image3.jpg" class="d-block w-100" alt="Immagine 3"></a>
+                    </div>
                 </div>
-                <div class="box">
-                    <a href="listacompleta.html">
-                        <h3>Lista completa</h3>
-                    </a>
-                </div>
-                <div class="box">
-                    <a href="#">
-                        <h3>Lista per persona</h3>
-                    </a>
-                </div>
-                <div class="box">
-                    <a href="#">
-                        <h3>Lista per mese</h3>
-                    </a>
-                </div>
-                <div class="box">
-                    <a href="#">
-                        <h3>Chi siamo</h3>
-                    </a>
-                </div>
+                <a class="carousel-control-prev" href="#carouselImages" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselImages" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
         </section>
     </main>
+
+    <!-- Bootstrap JS e dipendenze -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
