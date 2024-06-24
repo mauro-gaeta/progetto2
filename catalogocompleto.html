@@ -5,53 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalogo Completo - Intorno all'affaire Moro</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="catalogo.js"></script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Intorno all'affaire Moro</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Homepage</a></li>
-                    <li><a href="#">Catalogo</a>
-                        <ul>
-                            <li><a href="catalogocompleto.html">Catalogo completo</a></li>
-                            <li><a href="#">Catalogo per destinatario</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">La storia</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <main>
-        <section id="letter-list">
+    <div class="content">
+        <header>
             <div class="container">
-                <h2>Catalogo completo delle lettere</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Lettera n.</th>
-                            <th>Descrizione</th>
-                            <th>Data</th>
-                            <th>Destinatario</th>
-                            <th>Dettagli</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Lettera di Aldo Moro a Luigi Rossi</td>
-                            <td>20 marzo 1978</td>
-                            <td>Luigi Rossi</td>
-                            <td><a href="lettera1.html">Dettagli</a></td>
-                        </tr>
-                        <!-- Aggiungere altre righe per le altre lettere -->
-                    </tbody>
-                </table>
+                <h1>Intorno all'affaire Moro</h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Homepage</a></li>
+                        <li><a href="#">Catalogo</a>
+                            <ul>
+                                <li><a href="catalogocompleto.html">Catalogo completo</a></li>
+                                <li><a href="#">Catalogo per destinatario</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">La storia</a></li>
+                    </ul>
+                </nav>
             </div>
-        </section>
-    </main>
+        </header>
+        <main>
+            <section id="letter-list">
+                <div class="container">
+                    <h2>Catalogo completo delle lettere</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Lettera n.</th>
+                                <th>Descrizione</th>
+                                <th>Data</th>
+                                <th>Destinatario</th>
+                                <th>Dettagli</th>
+                            </tr>
+                        </thead>
+                        <tbody id="letter-table-body">
+                            <!-- Le righe saranno aggiunte dinamicamente qui -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
     <footer>
         <div class="container">
             <p>Progetto creato da Claudia Canforini, per la prova d'esame di Digital Humanities e patrimonio culturale</p>
