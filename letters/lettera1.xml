@@ -3,25 +3,38 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Lettera di Aldo Moro a Luigi Rossi</title>
-                <author>Aldo Moro</author>
-                <respStmt>
-                    <resp>Destinatario</resp>
-                    <name>Luigi Rossi</name>
-                </respStmt>
+                <title>Lettera di Aldo Moro</title>
             </titleStmt>
             <publicationStmt>
-                <publisher>Fonte della lettera di esempio.</publisher>
-                <date>1978-03-20</date>
+                <p>Lettera storica</p>
             </publicationStmt>
             <sourceDesc>
-                <p>Descrizione della fonte della lettera di esempio.</p>
+                <p>Archivio privato</p>
             </sourceDesc>
         </fileDesc>
     </teiHeader>
     <text>
         <body>
-            <p>Contenuto della lettera di esempio.</p>
+            <div type="letter">
+                <opener>
+                    <salute>Caro amico,</salute>
+                    <dateline>8 aprile 1978</dateline>
+                </opener>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+                <closer>
+                    <signed>Aldo Moro</signed>
+                </closer>
+            </div>
         </body>
     </text>
+    <profileDesc>
+        <creation>
+            <date>1978-04-08</date>
+        </creation>
+        <particDesc>
+            <person>
+                <persName>Carlo Rossi</persName>
+            </person>
+        </particDesc>
+    </profileDesc>
 </TEI>
