@@ -1,25 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Lettera di Aldo Moro a Luigi Rossi</title>
-                <author>Aldo Moro</author>
-            </titleStmt>
-            <publicationStmt>
-                <publisher>Fonte della lettera di esempio</publisher>
-                <date>20 marzo 1978</date>
-            </publicationStmt>
-            <sourceDesc>
-                <p>Lettera di Aldo Moro a Luigi Rossi</p>
-            </sourceDesc>
-        </fileDesc>
-    </teiHeader>
-    <text>
-        <body>
-            <div type="letter">
-                <p>Contenuto della lettera di esempio.</p>
-            </div>
-        </body>
-    </text>
-</TEI>
+<dublin_core>
+    <title>Lettera di Aldo Moro a Luigi Rossi</title>
+    <creator>Aldo Moro</creator>
+    <subject>Lettera</subject>
+    <description>Lettera di Aldo Moro a Luigi Rossi durante la sua prigionia.</description>
+    <date>1978-03-20</date>
+    <type>Text</type>
+    <format>text/xml</format>
+    <identifier>letter1</identifier>
+    <source>Fonte della lettera di esempio.</source>
+    <language>it</language>
+    <relation>Collezione di lettere di Aldo Moro</relation>
+    <coverage>Roma, Italia</coverage>
+    <rights>Proprietà dell'autore</rights>
+</dublin_core>
