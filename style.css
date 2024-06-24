@@ -92,15 +92,18 @@ main {
     margin-bottom: 10px;
 }
 
-.download-button {
+.download-button,
+.metadata-button {
     display: inline-block;
     padding: 8px 16px;
-    background-color: #6A5ACD; /* Colore del bottone di download */
+    background-color: #6A5ACD; /* Colore del bottone di download e metadati */
     color: white;
     text-decoration: none;
     border-radius: 4px;
+    margin-right: 10px;
 }
 
-.download-button:hover {
-    background-color: #4B0082; /* Colore di hover del bottone di download */
+.download-button:hover,
+.metadata-button:hover {
+    background-color: #4B0082; /* Colore di hover del bottone di download e metadati */
 }
