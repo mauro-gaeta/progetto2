@@ -10,6 +10,69 @@ header {
     color: #fff;
     text-align: center;
     padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #444;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu > li {
+    margin: 0 1rem;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+}
+
+.menu a:hover {
+    background-color: #555;
+}
+
+.submenu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color: #444;
+    z-index: 1000;
+}
+
+.menu li:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    width: 200px;
+}
+
+.submenu a {
+    padding: 0.5rem 1rem;
 }
 
 main {
@@ -32,6 +95,7 @@ h1, h2, h3 {
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
 }
 
 .letter h3 {
@@ -41,3 +105,39 @@ h1, h2, h3 {
 .letter p {
     margin: 0.5rem 0;
 }
+
+.letter img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem 0;
+}
+
+.download-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.download-button:hover {
+    background-color: #0056b3;
+}
+
+.box-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.box {
+    background-color: #fff;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width:
