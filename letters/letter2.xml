@@ -1,7 +1,7 @@
 <catalog xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:tei="http://www.tei-c.org/ns/1.0">
     <letter>
         <dc:title>Lettera di Laura Verdi a Paolo Rossi</dc:title>
-        <dc:creator>Laura Verdi</dc:creator>
+        <dc:author>Laura Verdi</dc:author>
         <dc:date>1980-07-21</dc:date>
         <tei:content>
             <![CDATA[
