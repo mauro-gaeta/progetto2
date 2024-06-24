@@ -1,21 +1,33 @@
+/* Reset generale */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Stile generale */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     line-height: 1.6;
+    background-color: #f2f2f2;
 }
 
 header {
     background-color: #333;
     color: #fff;
     padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 header nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 header nav ul li {
@@ -26,10 +38,16 @@ header nav ul li {
 header nav ul li a {
     color: #fff;
     text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+header nav ul li a:hover {
+    background-color: #555;
 }
 
 main {
-    padding: 20px;
+    padding: 80px 20px 20px; /* Adjust padding to accommodate fixed header */
 }
 
 footer {
@@ -40,4 +58,16 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    header nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    header nav ul li:last-child {
+        margin-bottom: 0;
+    }
 }
