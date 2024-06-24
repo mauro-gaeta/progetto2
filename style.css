@@ -5,10 +5,17 @@
     box-sizing: border-box;
 }
 
+body, html {
+    height: 100%;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 
 .container {
@@ -24,12 +31,18 @@ header {
     padding: 10px 0;
 }
 
+header h1 {
+    text-align: center;
+}
+
 header nav ul {
     list-style-type: none;
+    display: flex;
+    justify-content: center;
 }
 
 header nav ul li {
-    display: inline;
+    position: relative;
     margin-right: 20px;
 }
 
@@ -37,14 +50,32 @@ header nav ul ul {
     display: none;
     position: absolute;
     background-color: #6A5ACD; /* Colore di sfondo per il submenu */
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
 }
 
 header nav ul li:hover > ul {
     display: block;
 }
 
+header nav ul ul li {
+    margin: 0;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+header nav a:hover {
+    background-color: #6A5ACD;
+}
+
 main {
     padding: 20px 0;
+    flex: 1;
 }
 
 #carousel {
@@ -70,6 +101,7 @@ main {
     background-color: rgba(0, 0, 0, 0.5); /* Sfondo scuro per il testo */
     padding: 20px;
     text-align: center;
+    color: white;
 }
 
 .carousel-caption h2 {
@@ -94,9 +126,8 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: absolute;
-    bottom: 0;
     width: 100%;
+    margin-top: auto;
 }
 
 footer p {
